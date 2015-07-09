@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tn="peterBilberg.com/weather/cityCollection/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="peterBilberg.com/weather/cityCollection/schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="cityCollection">
+		<xs:complexType>
+			<xs:sequence>
+			<xs:element name="version" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="citylist" type="tn:citylistType" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="citylistType">
+		<xs:sequence>
+			<xs:element name="city" type="tn:cityType" minOccurs="0" maxOccurs="unbounded"/>	
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cityType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="country" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
