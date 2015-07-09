@@ -23,6 +23,8 @@ import static org.junit.Assert.*;
  */
 public class CitycollectionToolTest {
 
+    
+    private final String pathToTestinputFolder = "./src/test/resources/Testinput/";
     public CitycollectionToolTest() {
     }
 
@@ -66,7 +68,7 @@ public class CitycollectionToolTest {
     @Test
     public void validateCityCollectionXmlTest_Not_wellFormed() {
         try {
-            String inputFromFile = FileUtils.readFileToString(new File("./src/main/resources/Testinput/xmlValidation/cityCollectionForTest_NotWellFormed.xml"), "utf-8");
+            String inputFromFile = FileUtils.readFileToString(new File(pathToTestinputFolder+"xmlValidation/cityCollectionForTest_NotWellFormed.xml"), "utf-8");
             assertTrue("inputFile ikke læst korrekt", inputFromFile.length() > 0);
 
             CityCollectionValidationResult result = CitycollectionTool.getinstance().validateCityCollectionXml(inputFromFile);
@@ -86,7 +88,7 @@ public class CitycollectionToolTest {
     @Test
     public void validateCityCollectionXmlTest_WellFormedOk() {
         try {
-            String inputFromFile = FileUtils.readFileToString(new File("./src/main/resources/Testinput/xmlValidation/cityCollectionForTest_WellFormedOk.xml"), "utf-8");
+            String inputFromFile = FileUtils.readFileToString(new File(pathToTestinputFolder+"xmlValidation/cityCollectionForTest_WellFormedOk.xml"), "utf-8");
             assertTrue("inputFile ikke læst korrekt", inputFromFile.length() > 0);
 
             CityCollectionValidationResult result = CitycollectionTool.getinstance().validateCityCollectionXml(inputFromFile);
@@ -107,7 +109,7 @@ public class CitycollectionToolTest {
     @Test
     public void validateCityCollectionXmlTest_WellFormedElementNotAllowed() {
         try {
-            String inputFromFile = FileUtils.readFileToString(new File("./src/main/resources/Testinput/xmlValidation/cityCollectionForTest_WellFormedElementNotAllowed.xml"), "utf-8");
+            String inputFromFile = FileUtils.readFileToString(new File(pathToTestinputFolder+"xmlValidation/cityCollectionForTest_WellFormedElementNotAllowed.xml"), "utf-8");
             assertTrue("inputFile ikke læst korrekt", inputFromFile.length() > 0);
 
             CityCollectionValidationResult result = CitycollectionTool.getinstance().validateCityCollectionXml(inputFromFile);
@@ -128,7 +130,7 @@ public class CitycollectionToolTest {
      @Test
     public void validateCityCollectionXmlTest_WellFormedMissingElement() {
         try {
-            String inputFromFile = FileUtils.readFileToString(new File("./src/main/resources/Testinput/xmlValidation/cityCollectionForTest_WellFormedMissingElement.xml"), "utf-8");
+            String inputFromFile = FileUtils.readFileToString(new File(pathToTestinputFolder+"xmlValidation/cityCollectionForTest_WellFormedMissingElement.xml"), "utf-8");
             assertTrue("inputFile ikke læst korrekt", inputFromFile.length() > 0);
 
             CityCollectionValidationResult result = CitycollectionTool.getinstance().validateCityCollectionXml(inputFromFile);
